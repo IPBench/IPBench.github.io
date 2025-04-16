@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>IPBench</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/f8ddf9854a.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="A Comprehensive Intellectual Property Benchmark for Large Language Models">
+    <meta name="keywords" content="IPBench, LLM, Large Language Model, artificial intelligence, AI, AGI, artificial general intelligence">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> IPBench: Benchmarking the Knowledge of Large Language Models in Intellectual Property </title>
+
+    <link rel="icon" href="./static/images/mmmu_icon2.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <script src="https://kit.fontawesome.com/fff5b27ec1.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/eaf1856e6f.js" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    <link rel="stylesheet" href="static/css/index.css">
+  </head>
+  <body>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More Research
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="">
+                IPEval
+              </a>
+              <a class="navbar-item" href="">
+                AutoPatent
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title is-bold">
+                <img src="static/images/mmmu_icon2.png" style="width:1em;vertical-align: middle" alt="Logo"/>
+                <span class="IPBench" style="vertical-align: middle">IPBench</span>
+              </h1>
+              <h2 class="subtitle is-3 publication-subtitle">
+                Benchmarking the Knowledge of Large Language Models in Intellectual Property
+              </h2>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a href="https://wangqiyao.me/" style="text-decoration: none; color: inherit;">Qiyao Wang</a>,
+                </span>
+                <span class="author-block">
+                  <a style="text-decoration: none; color: inherit;">Guhong Chen</a>,
+                </span>
+                <span class="author-block">
+                  <a style="text-decoration: none; color: inherit;">Hongbo Wang</a>,
+                </span>
+                <span class="author-block">
+                  <a style="text-decoration: none; color: inherit;">Huaren Liu</a>,
+                </span>
+                <span class="author-block">Minghui Zhu,</span>
+                <span class="author-block">Zhifei Qin,</span>
+                <br>
+                <span class="author-block">Linwei Li,</span>
+                <span class="author-block">Yilin Yue,</span>
+                <span class="author-block">Shiqiang Wang,</span>
+                <span class="author-block">Yihang Wu,</span>
+                <span class="author-block">Jiayan Li,</span>
+                <span class="author-block">Ziqiang Liu,</span>
+                <span class="author-block">Longze Chen,</span>
+                <span class="author-block">Run Luo,</span>
+                <span class="author-block">Liyang Fan,</span>
+                <span class="author-block">Jiaming Li,</span>
+                <span class="author-block">Lei Zhang,</span>
+                <span class="author-block">Kan Xu,</span>
+                <span class="author-block">Hongfei Lin,</span>
+                <span class="author-block">Hamid Alinejad-Rokny,</span>
+                <br>
+                <span class="author-block">
+                  <a href="" style="text-decoration: none; color: inherit;">Shiwen Ni†</a>,
+                </span>
+                <span class="author-block">
+                  <a href="" style="text-decoration: none; color: inherit;">Yuan LIn†</a>,
+                </span>
+                <span class="author-block">
+                  <a href="" style="text-decoration: none; color: inherit;">Min Yang†</a>
+                </span>
+              </div>
+
+              <br>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><b>SIAT</b>, <b>DUT</b>, <b>SUAT</b> and UNSW</span>
+              </div>
+
+              <br>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">† Corresponding Authors</span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon" style="font-size:18px">🤗</span>
+                      <span>IPBench</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="#leaderboard" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon has-text-white">
+                        <i class="fa-solid fa-trophy"></i>
+                      </span>
+                      <span>Leaderboard</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="#examples" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon has-text-white">
+                        <i class="fa-solid fa-book"></i>
+                      </span>
+                      <span>Examples</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop has-text-centered">
+        <img src="static/images/overview_mmlu.Jpeg" alt="geometric reasoning">
+        <p>Overview of the IPBench.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="margin-bottom: 2vh;">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">🔔News</h2>
+            <div class="content has-text-justified">
+              <p>
+<!--                <b>🔥[2023-12-04]: Our evaluation server for the test set is now available on <a href="https://eval.ai/web/challenges/challenge-page/2179/overview"><b>EvalAI</b></a>. We welcome all submissions and look forward to your participation! 😆</b>-->
+              </p>
+          </div>
+            <h2 class="title is-3">Introduction</h2>
+            <div class="content has-text-justified">
+              <p>
+                IPBench Introduction Placeholder
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--/ Abstract. -->
+    </div>
+    </section>
+
+    <!-- DATASET SECTION -->
+    <section class="hero is-light is-small">
+      <div class="hero-body has-text-centered">
+        <h1 class="title is-1 IPBench">
+          <img src="static/images/mmmu_icon2.png" alt="Logo" class="IPBench-logo"/>
+          <span class="IPBench">Intellectual Property Benchmark</span>
+        </h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Overview</h2>
+            <div class="content has-text-justified">
+              <p>
+                IPBench Introduction Placeholder
+              </p>
+              <img src="static/images/mmlu_example.Jpeg" alt="algebraic reasoning" class="center">
+              <br>
+              <p>
+                Designed Target.
+              </p>
+              <p>
+                Contributions.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Comparisons with Existing Benchmarks</h2>
+            <div class="content has-text-justified">
+              <p>
+                Comparisons
+              </p>
+              <div class="content has-text-centered">
+                <img src="static/images/compare.Jpeg" alt="algebraic reasoning" class="center">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3">Statistics</h2>
+            <div class="carousel results-carousel">
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/mmmu_subject_distribution.Jpeg" alt="algebraic reasoning" width="95%"/>-->
+<!--                  <p> Sampled MMMU examples from each discipline. The questions and images need expert-level knowledge to understand and reason.</p>-->
+<!--                </div>-->
+              </div>
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/statistics.png" alt="arithmetic reasoning" width="40%"/>-->
+<!--                  <p> Key statistics of the MMMU benchmark</p>-->
+<!--                </div>-->
+              </div>
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/image_type_count.png" alt="arithmetic reasoning" width="80%"/>-->
+<!--                  <p> Distribution of image types in the MMMU dataset</p>-->
+<!--                </div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS SECTION -->
+    <section class="hero is-light is-small">
+      <div class="hero-body has-text-centered">
+        <h1 class="title is-1 IPBench">Experiment Results</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-------------------------------------------------------------------- RESULTS SECTION -------------------------------------------------------------------->
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
+            <div class="content has-text-justified">
+              <p>
+                something
+              </p>
+            </div>
+            <br>
+            <div class="model-labels-container">
+              <span class="leaderboard-label human_expert">tag1</span>
+              <span class="leaderboard-label open_source">tag2</span>
+              <span class="leaderboard-label proprietary">tag3</span>
+            </div>
+            <br>
+            <div class="content has-text-centered">
+              <p>
+                something
+              </p>
+            </div>
+<!--            <div class="leaderboard-container">-->
+<!--              <div class="table-wrapper">-->
+<!--                <table id="IPBench-table">-->
+<!--                  <thead>-->
+<!--                    <tr>-->
+<!--                      <th colspan="3" class="reset-cell clickable" style="text-align: center;">Reset</th>-->
+<!--                      <th class="pro-details-cell clickable" colspan="1">MMMU-Pro</th>-->
+<!--                      <th class="val-details-cell clickable" colspan="1">MMMU(Val)</th>-->
+<!--                      <th class="test-details-cell clickable" colspan="1">MMMU(Test)</th>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                      <th class="sortable clickable" data-sort="string">Name</th>-->
+<!--                      <th class="clickable" data-sort="string">Size</th>-->
+<!--                      <th class="sortable clickable" data-sort="date">Date</th>-->
+<!--                      <th class="sortable clickable pro-overall" data-sort="number">Overall</th>-->
+<!--                      <th class="hidden pro-details sortable clickable" data-sort="number">Vision</th>-->
+<!--                      <th class="hidden pro-details sortable clickable" data-sort="number">Standard</th>-->
+<!--                      <th class="sortable clickable val-overall" data-sort="number">Overall</th>-->
+<!--                      <th class="hidden val-details sortable clickable" data-sort="number">Art & Design</th>-->
+<!--                      <th class="hidden val-details sortable clickable" data-sort="number">Business</th>-->
+<!--                      <th class="hidden val-details sortable clickable" data-sort="number">Science</th>-->
+<!--                      <th class="hidden val-details sortable clickable" data-sort="number">Health & Medicine</th>-->
+<!--                      <th class="hidden val-details sortable clickable" data-sort="number">Human. & Social Sci.</th>-->
+<!--                      <th class="hidden val-details sortable clickable" data-sort="number">Tech & Eng.</th>-->
+<!--                      <th class="sortable clickable test-overall" data-sort="number">Overall</th>-->
+<!--                      <th class="hidden test-details sortable clickable" data-sort="number">Art & Design</th>-->
+<!--                      <th class="hidden test-details sortable clickable" data-sort="number">Business</th>-->
+<!--                      <th class="hidden test-details sortable clickable" data-sort="number">Science</th>-->
+<!--                      <th class="hidden test-details sortable clickable" data-sort="number">Health & Medicine</th>-->
+<!--                      <th class="hidden test-details sortable clickable" data-sort="number">Human. & Social Sci.</th>-->
+<!--                      <th class="hidden test-details sortable clickable" data-sort="number">Tech & Eng.</th>-->
+<!--                    </tr>-->
+<!--                  </thead>-->
+<!--                  <tbody>-->
+<!--                    &lt;!&ndash; Table body will be populated dynamically &ndash;&gt;-->
+<!--                  </tbody>-->
+<!--                </table>-->
+<!--                <p class="test-desc"> Overall results of different models on the MMMU leaderboard. The best-performing model in each category is <b>in-bold</b>, and the second best is <u>underlined</u>. *: results provided by the authors.</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+        </div>
+        <!-------------------------------------------------------------------- Image Type SECTION -------------------------------------------------------------------->
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3">IP Mechanism Type</h2>
+            <div class="content has-text-justified">
+              <p>
+                something
+              </p>
+            </div>
+<!--            <div class="model-labels-container">-->
+<!--              <span class="model-label" style="background-color: rgba(196, 123, 160, 0.5);">Adept Fuyu-8B</span>-->
+<!--              <span class="model-label" style="background-color: rgba(245, 123, 113, 0.5);">Qwen-VL-7B-Chat</span>-->
+<!--              <span class="model-label" style="background-color: rgba(255, 208, 80, 0.5);">LLaVA-1.5-13B</span>-->
+<!--              <span class="model-label" style="background-color: rgba(110, 194, 134, 0.5);">InstructBLIP-T5-XXL</span>-->
+<!--              <span class="model-label" style="background-color: rgba(255, 153, 78, 0.5);">BLIP-2 FLAN-T5-XXL</span>-->
+<!--              <span class="model-label" style="background-color: rgba(42, 149, 235, 0.5);">Yi-VL-34B</span>-->
+<!--              <span class="model-label" style="background-color: rgba(183, 156, 220, 0.5);">LLaVA-1.6-34B</span>-->
+<!--              <span class="model-label" style="background-color: rgba(143, 169, 209, 0.5);">InternVL-Chat-V1.2</span>-->
+<!--              <span class="model-label" style="background-color: rgba(72, 199, 176, 0.5);">VILA1.5</span>-->
+<!--              <span class="model-label" style="background-color: rgba(117, 209, 215, 0.5);">GPT-4V</span>-->
+<!--            </div>-->
+<!--            <div class="content has-text-centered">-->
+<!--              <div class="chart-grid">-->
+<!--                &lt;!&ndash; Chart 1: Diagrams &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                    <canvas id="chart_Diagrams"></canvas>-->
+<!--                    <p class="chart-label">Diagrams (3184)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 2: Tables &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                    <canvas id="chart_Tables"></canvas>-->
+<!--                    <p class="chart-label">Tables (2267)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 3: Plots and Charts &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_PlotsAndCharts"></canvas>-->
+<!--                  <p class="chart-label">Plots and Charts (840)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 4: Chemical Structures &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_ChemicalStructures"></canvas>-->
+<!--                  <p class="chart-label">Chemical Structures (573)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 5: Photographs &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_Photographs"></canvas>-->
+<!--                  <p class="chart-label">Photographs (770)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 6: Paintings &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_Paintings"></canvas>-->
+<!--                  <p class="chart-label">Paintings (453)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 7: Geometric Shapes &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_GeometricShapes"></canvas>-->
+<!--                  <p class="chart-label">Geometric Shapes (336)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 8: Sheet Music &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_SheetMusic"></canvas>-->
+<!--                  <p class="chart-label">Sheet Music (335)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 9: Medical Images &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_MedicalImages"></canvas>-->
+<!--                  <p class="chart-label">Medical Images (272)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 10: Pathological Images &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_PathologicalImages"></canvas>-->
+<!--                  <p class="chart-label">Pathological Images (253)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 11: Microscopic Images &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_MicroscopicImages"></canvas>-->
+<!--                  <p class="chart-label">Microscopic Images (226)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 12: MRI, CT scans, and X-rays &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_MRIsCTScansXrays"></canvas>-->
+<!--                  <p class="chart-label">MRI, CT scans, and X-rays (198)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 13: Sketches and Drafts &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_SketchesAndDrafts"></canvas>-->
+<!--                  <p class="chart-label">Sketches and Drafts (184)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 14: Maps &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_Maps"></canvas>-->
+<!--                  <p class="chart-label">Maps (170)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 15: Technical Blueprints &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_TechnicalBlueprints"></canvas>-->
+<!--                  <p class="chart-label">Technical Blueprints (162)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 16: Trees and Graphs &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_TreesAndGraphs"></canvas>-->
+<!--                  <p class="chart-label">Trees and Graphs (146)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 17: Mathematical Notations &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_MathematicalNotations"></canvas>-->
+<!--                  <p class="chart-label">Mathematical Notations (133)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 18: Comics and Cartoons &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_ComicsAndCartoons"></canvas>-->
+<!--                  <p class="chart-label">Comics and Cartoons (131)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 19: Sculpture &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_Sculpture"></canvas>-->
+<!--                  <p class="chart-label">Sculpture (117)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 20: Portraits &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_Portraits"></canvas>-->
+<!--                  <p class="chart-label">Portraits (91)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 21: Screenshots &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_Screenshots"></canvas>-->
+<!--                  <p class="chart-label">Screenshots (70)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 22: Other &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_Other"></canvas>-->
+<!--                  <p class="chart-label">Other(60)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 23: Poster &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_Poster"></canvas>-->
+<!--                  <p class="chart-label">Poster(57)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 24: Icons and Symbols &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_IconsAndSymbols"></canvas>-->
+<!--                  <p class="chart-label">Icons and Symbols (42)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 25: Historical Timelines &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_HistoricalTimelines"></canvas>-->
+<!--                  <p class="chart-label">Historical Timelines (30)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 26: 3D Renderings &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_3DRenderings"></canvas>-->
+<!--                  <p class="chart-label">3D Renderings (21)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 27: DNA Sequences &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_DNASequences"></canvas>-->
+<!--                  <p class="chart-label">DNA Sequences (20)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 28: Landscapes &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_Landscapes"></canvas>-->
+<!--                  <p class="chart-label">Landscapes (16)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 29: Logos and Branding &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_LogosAndBranding"></canvas>-->
+<!--                  <p class="chart-label">Logos and Branding(14)</p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Chart 30: Advertisements &ndash;&gt;-->
+<!--                <div class="chart-item">-->
+<!--                  <canvas id="chart_Advertisements"></canvas>-->
+<!--                  <p class="chart-label">Advertisements (10)</p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+          </div>
+        </div>
+      <!-------------------------------------------------------------------- Error Analysis SECTION -------------------------------------------------------------------->
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3">Error Analysis</h2>
+            <div class="content has-text-justified">
+              <p>
+                something
+              </p>
+            </div>
+            <div class="content has-text-centered">
+              <img src="static/images/error_distribution_1.Jpeg" alt="error distribution" width="25%">
+              <p> Error distribution over 300 annotated GPT-4o-mini errors.</p>
+            </div>
+          </div>
+        </div>
+      <!-------------------------------------------------------------------- Error Example  -------------------------------------------------------------------->
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3" id="examples">Error Examples</h2>
+            <div class="carousel results-carousel">
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/error/1.png" alt="grade-lv" width="60%"/>-->
+<!--                </div>-->
+              </div>
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/error/2.png" alt="grade-lv" width="60%"/>-->
+<!--                </div>-->
+              </div>
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/error/3.png" alt="grade-lv" width="60%"/>-->
+<!--                </div>-->
+              </div>
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/error/4.png" alt="grade-lv" width="60%"/>-->
+<!--                </div>-->
+              </div>
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/error/5.png" alt="grade-lv" width="60%"/>-->
+<!--                </div>-->
+              </div>
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/error/6.png" alt="grade-lv" width="60%"/>-->
+<!--                </div>-->
+              </div>
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/error/7.png" alt="grade-lv" width="60%"/>-->
+<!--                </div>-->
+              </div>
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/error/8.png" alt="grade-lv" width="60%"/>-->
+<!--                </div>-->
+              </div>
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/error/9.png" alt="grade-lv" width="60%"/>-->
+<!--                </div>-->
+              </div>
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/error/10.png" alt="grade-lv" width="60%"/>-->
+<!--                </div>-->
+              </div>
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/error/11.png" alt="grade-lv" width="60%"/>-->
+<!--                </div>-->
+              </div>
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/error/12.png" alt="grade-lv" width="60%"/>-->
+<!--                </div>-->
+              </div>
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/error/13.png" alt="grade-lv" width="60%"/>-->
+<!--                </div>-->
+              </div>
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/error/15.png" alt="grade-lv" width="60%"/>-->
+<!--                </div>-->
+              </div>
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/error/16.png" alt="grade-lv" width="60%"/>-->
+<!--                </div>-->
+              </div>
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/error/17.png" alt="grade-lv" width="60%"/>-->
+<!--                </div>-->
+              </div>
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/error/18.png" alt="grade-lv" width="60%"/>-->
+<!--                </div>-->
+              </div>
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/error/19.png" alt="grade-lv" width="60%"/>-->
+<!--                </div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-------------------------------------------------------------------- Correct Example -------------------------------------------------------------------->
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3">Correct Examples</h2>
+            <div id="results-carousel" class="carousel results-carousel">
+              <div class="box m-5">
+<!--                <div class="content has-text-centered">-->
+<!--                  <img src="static/images/correct/1.png" alt="grade-lv" width="60%"/>-->
+<!--                </div>-->
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- @PAN TODO: bibtex -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title is-3 has-text-centered">BibTeX</h2>
+        <pre><code>
+          comming...
+    </code></pre>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is website adapted from <a href="https://nerfies.github.io/">Nerfies</a>, <a href="https://mathvista.github.io/">MathVista</a> and <a href="https://mmmu-benchmark.github.io/">MMMU</a>, licensed under a <a rel="license"
+                                                  href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

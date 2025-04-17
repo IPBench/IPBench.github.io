@@ -1,4 +1,4 @@
-# MMMU
+# IPBench
 Homepage of IPBench, Benchmarking the Knowledge of Large Language Models in Intellectual Property. 
 
 This website is adapted from [Nerfies website](https://nerfies.github.io), [MathVista](https://mathvista.github.io/) and [MMMU](https://mmmu-benchmark.github.io/).

@@ -98,7 +98,7 @@
               <div class="column has-text-centered">
                 <div class="publication-links">
                   <span class="link-block">
-                    <a href="https://arxiv.org/abs/2504.15524" class="external-link button is-normal is-rounded is-dark">
+                    <a href="" class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
                       </span>
@@ -106,13 +106,13 @@
                     </a>
                   </span>
                   <span class="link-block">
-                    <a href="https://huggingface.co/datasets/IPBench/IPBench" class="external-link button is-normal is-rounded is-dark">
+                    <a href="" class="external-link button is-normal is-rounded is-dark">
                       <span class="icon" style="font-size:18px">🤗</span>
                       <span>IPBench</span>
                     </a>
                   </span>
                   <span class="link-block">
-                    <a href="https://github.com/IPBench/IPBench" class="external-link button is-normal is-rounded is-dark">
+                    <a href="" class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fab fa-github"></i>
                       </span>
@@ -150,9 +150,6 @@
           <div class="column is-four-fifths">
             <h2 class="title is-3">🔔News</h2>
             <div class="content has-text-justified">
-              <p>
-                <b>🎉 [2025-04-23]: Our IPBench paper (<a href="https://arxiv.org/abs/2504.15524">IPBench: Benchmarking the Knowledge of Large Language Models in Intellectual Property</a>) can be accessed in arXiv!</b>
-              </p>
               <p>
                 <b>🔥 [2025-04-17]: We will release our paper and benchmark soon.</b>
               </p>
@@ -394,6 +391,82 @@
               <p>
                 Click on different buttons to view the results under various settings.
               </p>
+            </div>
+            <div class="leaderboard-container">
+              <div class="table-wrapper">
+                <table id="IPBench-table">
+                  <thead>
+                    <tr>
+                      <th colspan="2" class="reset-cell clickable" style="text-align: center;">Reset</th>
+                      <th class="pro-details-cell clickable" colspan="1">MCQA</th>
+                      <th class="val-details-cell clickable" colspan="1">Classification</th>
+                      <th class="test-details-cell clickable" colspan="1">Generation</th>
+                    </tr>
+
+                    <tr>
+                      <th class="sortable clickable" rowspan="2" data-sort="string">Name</th>
+                      <th class="sortable clickable" rowspan="2" data-sort="string">Size</th>
+<!--                      <th class="sortable clickable" rowspan="2" data-sort="date">Date</th>-->
+<!--                      <th class="sortable clickable pro-overall" rowspan="2" data-sort="number">Overall</th>-->
+                      <th class="sortable clickable pro-overall" rowspan="2" data-sort="number">OA</th>
+
+                      <th class="hidden pro-details sortable clickable" rowspan="2" data-sort="number">1-1</th>
+                      <th class="hidden pro-details sortable clickable" rowspan="2" data-sort="number">1-2</th>
+                      <th class="hidden pro-details sortable clickable" rowspan="2" data-sort="number">1-3</th>
+                      <th class="hidden pro-details sortable clickable" rowspan="2" data-sort="number">1-4</th>
+                      <th class="hidden pro-details sortable clickable" rowspan="2" data-sort="number">1-6</th>
+                      <th class="hidden pro-details sortable clickable" rowspan="2" data-sort="number">1-7</th>
+                      <th class="hidden pro-details sortable clickable" rowspan="2" data-sort="number">2-1</th>
+                      <th class="hidden pro-details sortable clickable" rowspan="2" data-sort="number">2-2</th>
+                      <th class="hidden pro-details sortable clickable" rowspan="2" data-sort="number">2-3</th>
+                      <th class="hidden pro-details sortable clickable" rowspan="2" data-sort="number">2-4</th>
+                      <th class="hidden pro-details sortable clickable" rowspan="2" data-sort="number">2-5</th>
+                      <th class="hidden pro-details sortable clickable" rowspan="2" data-sort="number">3-1</th>
+                      <th class="hidden pro-details sortable clickable" rowspan="2" data-sort="number">3-2</th>
+                      <th class="hidden pro-details sortable clickable" rowspan="2" data-sort="number">3-3</th>
+                      <th class="hidden pro-details sortable clickable" rowspan="2" data-sort="number">3-4</th>
+                      <th class="hidden pro-details sortable clickable" rowspan="2" data-sort="number">3-5</th>
+                      <th class="hidden pro-details sortable clickable" rowspan="2" data-sort="number">4-3</th>
+                      <th class="sortable clickable val-overall" rowspan="2" data-sort="number">--</th>
+                      <th class="hidden val-details sortable clickable" colspan="4" data-sort="number">IPC Classification(1-5-1)</th>
+                      <th class="hidden val-details sortable clickable" colspan="4" data-sort="number">CPC Classification(1-5-2)</th>
+
+                      <th class="sortable clickable test-overall" rowspan="2" data-sort="number">--</th>
+                      <th class="hidden test-details sortable clickable" colspan="5" data-sort="number">Abstract Generation(4-1)</th>
+                      <th class="hidden test-details sortable clickable" colspan="6" data-sort="number">Dependent Claim Generation(4-2)</th>
+
+                     </tr>
+                    <tr>
+                      <th class="hidden val-details sortable clickable" data-sort="number">Exact-Match</th>
+                      <th class="hidden val-details sortable clickable" data-sort="number">Section</th>
+                      <th class="hidden val-details sortable clickable" data-sort="number">Class</th>
+                      <th class="hidden val-details sortable clickable" data-sort="number">Subclass</th>
+                      <th class="hidden val-details sortable clickable" data-sort="number">Exact-Match</th>
+                      <th class="hidden val-details sortable clickable" data-sort="number">Section</th>
+                      <th class="hidden val-details sortable clickable" data-sort="number">Class</th>
+                      <th class="hidden val-details sortable clickable" data-sort="number">Subclass</th>
+
+                      <th class="hidden test-details sortable clickable" data-sort="number">BLEU</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">R-L</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">BS</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">LLMScore(1-10)</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">Tokens#(148.5)</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">BLEU</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">R-L</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">BS</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">LLMScore(1-10)</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">Tokens#(437.6)</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">DC#(5.2)</th>
+                  </tr>
+                  </thead>
+
+                  <tbody>
+                    <!-- Table body will be populated dynamically -->
+
+                  </tbody>
+                </table>
+                <p class="test-desc"> Overall results of different models on the MMMU leaderboard. The best-performing model in each category is <b>in-bold</b>, and the second best is <u>underlined</u>. *: results provided by the authors.</p>
+              </div>
             </div>
           </div>
         </div>

@@ -303,7 +303,7 @@
     {
       "info": {
         "name": "Llama3.1-8B-it",
-        "size": "-",
+        "size": "8B",
         
         "type": "human_expert"
       },
@@ -362,7 +362,7 @@
     },{
       "info": {
         "name": "Llama3.1-70B-it",
-        "size": "-",
+        "size": "70B",
         
         "type": "human_expert"
       },
@@ -422,7 +422,7 @@
     {
       "info": {
         "name": "Gemma-2-27B-it",
-        "size": "-",
+        "size": "27B",
         
         "type": "human_expert"
       },
@@ -482,7 +482,7 @@
     {
       "info": {
         "name": "Gemma-2-9B-it",
-        "size": "-",
+        "size": "9B",
         
         "type": "human_expert"
       },
@@ -542,7 +542,7 @@
     {
       "info": {
         "name": "Mistral-7B-it",
-        "size": "-",
+        "size": "7B",
         
         "type": "human_expert"
       },
@@ -604,7 +604,7 @@
         "name": "MoZi-qwen",
         "size": "7B",
         
-        "type": "open_source"
+        "type": "proprietary"
       },
       "pro": {
         "overall": "xxx",
@@ -750,7 +750,7 @@
         "name": "DeepSeek-R1",
         "size": "671B",
         
-        "type": "proprietary"
+        "type": "human_expert"
       },
       "pro": {
         "overall": "xxx",
@@ -810,7 +810,7 @@
         "name": "DS-Qwen-7B",
         "size": "7B",
         
-        "type": "proprietary"
+        "type": "human_expert"
       },
       "pro": {
         "overall": "xxx",
@@ -870,7 +870,7 @@
         "name": "QwQ-32B",
         "size": "32B",
         
-        "type": "proprietary"
+        "type": "human_expert"
       },
       "pro": {
         "overall": "xxx",
